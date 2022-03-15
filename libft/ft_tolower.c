@@ -6,11 +6,11 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 20:01:11 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/11 20:01:37 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:55:46 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);

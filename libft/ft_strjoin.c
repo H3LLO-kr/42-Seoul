@@ -6,12 +6,12 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:53:21 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 22:54:01 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:57:40 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 
-int	ft_strlen(char *str);
+#include "libft.h"
+
 int	_len_ret(int size, char **strs, char *sep);
 
 char	*ft_strjoin(int size, char **strs, char *sep)
@@ -54,14 +54,4 @@ int	_len_ret(int size, char **strs, char *sep)
 		len += ft_strlen(strs[i++]);
 	len += ft_strlen(sep) * (size - 1);
 	return (len);
-}
-
-int	ft_strlen(char *str)
-{
-	int	ret;
-
-	ret = 0;
-	while (str[ret])
-		ret++;
-	return (ret);
 }

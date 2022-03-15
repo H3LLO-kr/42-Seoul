@@ -6,11 +6,11 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:57:49 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 22:57:56 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:59:19 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	_is_in(char c, char *charset)
 {

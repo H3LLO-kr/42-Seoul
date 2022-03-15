@@ -6,19 +6,11 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 23:12:45 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 23:22:44 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:58:25 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	ret;
-
-	ret = 0;
-	while (str[ret])
-		ret++;
-	return (ret);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)
 {

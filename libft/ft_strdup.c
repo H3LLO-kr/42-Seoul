@@ -6,11 +6,11 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:55:53 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 22:56:08 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:59:43 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {
