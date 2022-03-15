@@ -6,15 +6,19 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 20:39:11 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/11 20:55:57 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:08:52 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, unsigned int num)
+void	*ft_memmove(void *d, const void *s, unsigned int num)
 {
-	int	i;
+	unsigned int		i;
+	unsigned char		*dest;
+	const unsigned char	*src;
 
-	if (!dest && !src)
+	dest = d;
+	src = s;
+	if (!dest || !src)
 		return (0);
 	if (dest > src)
 	{

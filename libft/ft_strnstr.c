@@ -6,14 +6,14 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 23:34:35 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 23:35:30 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:24:11 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strnstr(char *str, char *to_find, unsigned int size)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	if (to_find[0] == '\0')

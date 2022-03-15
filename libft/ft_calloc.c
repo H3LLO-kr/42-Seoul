@@ -6,17 +6,17 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 23:37:28 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 14:56:30 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:31:12 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(unsigned int nmemb, size_t size)
 {
 	unsigned char	*ptr;
 	unsigned char	*ret;
-	int				i;
+	unsigned int	i;
 
 	ptr = malloc(nmemb * size);
 	ret = ptr;
@@ -24,7 +24,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	while (i < nmemb)
 	{
 		*ptr = 0;
-		ptr++l;
+		ptr++;
 		i++;
 	}
 	return (ret);

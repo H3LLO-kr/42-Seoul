@@ -6,13 +6,13 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:05:06 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 22:31:26 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:15:52 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_bzero(void *dest, unsigned int count)
 {
-	int				i;
+	unsigned int	i;
 	unsigned char	*ptr;
 
 	ptr = dest;

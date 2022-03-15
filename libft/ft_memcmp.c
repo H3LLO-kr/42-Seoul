@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 14:10:09 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 15:36:42 by chanhapa         ###   ########.fr       */
+/*   Created: 2022/03/15 15:03:56 by chanhapa          #+#    #+#             */
+/*   Updated: 2022/03/15 17:22:39 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
-{
-	int	ret;
+#include "libft.h"
 
-	ret = 0;
-	while (str[ret])
-		ret++;
-	return (ret);
+int	ft_memcmp(const void *buf1, const void *buf2, size_t count)
+{
+	size_t				i;
+	const unsigned char	*s1;
+	const unsigned char	*s2;
+
+	s1 = buf1;
+	s2 = buf2;
+	if (count == 0)
+		return (0);
+	i = 0;
+	while (i < count)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	if (i == count)
+		return (0);
+	else
+		return ((int)s1[i] - (int)s2[i]);
 }

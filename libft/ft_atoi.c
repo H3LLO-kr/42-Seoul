@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:11:09 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 14:13:23 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:05:21 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	_is_space(char c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	num;
 	int	sign;
 
 	num = 0;
-	sign = -1;
+	sign = 1;
 	while (*str && _is_space(*str))
 		str++;
 	if (*str == '-' || *str == '+')
