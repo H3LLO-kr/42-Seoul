@@ -3,55 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 22:53:21 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 14:57:40 by chanhapa         ###   ########.fr       */
+/*   Created: 2022/03/15 18:28:40 by chanhapa          #+#    #+#             */
+/*   Updated: 2022/03/15 18:37:35 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	_len_ret(int size, char **strs, char *sep);
-
-char	*ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	long		len;
-	int			i;
-	char		*str;
-	int			j[2];
+	int		len;
+	char	*str;
+	int		i;
+	int		j;
 
-	i = 0;
-	len = _len_ret(size, strs, sep);
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
-	j[0] = 0;
-	while (i < len)
-	{
-		j[1] = 0;
-		while (*strs[j[0]])
-			str[i++] = *(strs[j[0]]++);
-		j[0]++;
-		if (i == len)
-			break ;
-		while (sep[j[1]])
-			str[i++] = sep[j[1]++];
-	}
-	str[i] = 0;
+	j = 0;
+	while (s1[j])
+		str[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		str[i++] = s2[j++];
 	return (str);
-}
-
-int	_len_ret(int size, char **strs, char *sep)
-{
-	int	len;
-	int	i;
-
-	i = 0;
-	if (size <= 0)
-		return (0);
-	len = 0;
-	while (i < size)
-		len += ft_strlen(strs[i++]);
-	len += ft_strlen(sep) * (size - 1);
-	return (len);
 }

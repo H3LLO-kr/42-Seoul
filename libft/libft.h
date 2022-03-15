@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:45:37 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 17:59:32 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:29:04 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int				ft_tolower(int c);
 int				ft_toupper(int c);
 //Part 2
 char			*ft_itoa(int num);
-char			**ft_split(char *src, char *charset);
-char			*ft_strjoin(int size, char **strs, char *sep);
+char			**ft_split(char *src, char sep);
+char			*ft_strjoin(char const *s1, char const *s2);
 void			ft_putchar_fd(char c, int fd);
 
 #endif
