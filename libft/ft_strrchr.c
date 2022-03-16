@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 23:12:45 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 15:23:54 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/16 03:35:25 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strrchr(const char *str, int c)
 	int		i;
 
 	i = ft_strlen((char *)str) - 1;
-	while (i >= 0)
+	while (str[i] != c)
 	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
+		if (i == 0)
+			return (NULL);
 		i--;
 	}
-	return (0);
+	return ((char *)str + i);
 }

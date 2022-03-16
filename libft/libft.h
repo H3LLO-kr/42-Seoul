@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:45:37 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 18:29:04 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/16 03:14:24 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int				ft_isprint(int c);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t num);
 void			*ft_memchr(void *ptr, int value, size_t num);
 void			*ft_memcpy(void *dest, const void *src, unsigned int num);
-void			*ft_memmove(void *dest, const void *src, unsigned int num);
+void			*ft_memmove(void *dest, const void *src, size_t num);
 int				ft_memcmp(const void *buf1, const void *buf2, size_t count);
 void			*ft_memset(void *dest, int value, unsigned int count);
 char			*ft_strchr(const char *str, int c);
