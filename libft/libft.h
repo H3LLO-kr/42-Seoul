@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:45:37 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/16 03:14:24 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:40:04 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ char			*ft_itoa(int num);
 char			**ft_split(char *src, char sep);
 char			*ft_strjoin(char const *s1, char const *s2);
 void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd)
 
 #endif
