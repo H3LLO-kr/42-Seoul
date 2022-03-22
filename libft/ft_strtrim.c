@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 22:02:54 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/21 13:56:03 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/22 17:45:48 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 
 	i = 0;
+	if (!s1 || !set)
+		return (NULL);
 	trimmed = (char *)malloc(sizeof(char) * (ft_strlen((char *)s1) + 1));
 	if (!trimmed)
 		return (NULL);

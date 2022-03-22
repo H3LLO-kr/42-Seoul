@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:57:49 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/16 01:16:28 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/22 17:46:07 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	**ft_split(char *src, char sep)
 	int		j;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	ret = (char **)malloc(sizeof(char *) * 100);
 	ret_ret = ret;
 	if (!ret)
