@@ -6,9 +6,11 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:59:34 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/22 17:32:19 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/22 17:35:31 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
