@@ -6,15 +6,15 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:59:34 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/17 23:33:11 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/22 17:32:19 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	i = 0;
 	j = 0;
