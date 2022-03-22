@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chanhapa <chanhapa@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 20:39:11 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/21 14:15:31 by chanhapa         ###   ########.fr       */
+/*   Created: 2022/03/17 22:33:35 by chanhapa          #+#    #+#             */
+/*   Updated: 2022/03/17 22:42:40 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *d, const void *s, size_t num)
+void	_write_r(long nbr, int fd)
 {
-	size_t				i;
-	unsigned char		*dest;
-	const unsigned char	*src;
+	char	c;
 
-	dest = d;
-	src = s;
-	if (!dest && !src)
-		return (NULL);
-	if (dest >= src)
+	if (nbr / 10 == 0)
 	{
-		i = num + 1;
-		while (--i)
-			dest[i - 1] = src[i - 1];
+		c = nbr + '0';
+		write(fd, &c, 1);
 	}
 	else
 	{
-		i = -1;
-		while (++i < num)
-			dest[i] = src[i];
+		_write_r(nbr / 10, fd);
+		c = nbr % 10 + '0';
+		write(fd, &c, 1);
 	}
-	return (dest);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nbr;
+
+	nbr = n;
+	if (n < 0)
+	{
+		nbr *= -1;
+		write(fd, "-", 1);
+	}
+	_write_r(nbr, fd);
 }

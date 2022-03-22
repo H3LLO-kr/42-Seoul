@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:59:34 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 22:59:37 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/17 23:33:11 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 
 	i = 0;
 	j = 0;
-	while (dest[i])
+	while (dest[i] && i < size)
 		i++;
 	while (src[j])
 		j++;
 	if (i + 1 > size)
 		return (j + size);
 	k = 0;
-	while (i + k < size - 1 && src[k])
+	while (i + k + 1 < size && src[k])
 	{
 		dest[i + k] = src[k];
 		k++;

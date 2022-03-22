@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chanhapa <chanhapa@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 20:39:11 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/21 14:15:31 by chanhapa         ###   ########.fr       */
+/*   Created: 2022/03/17 22:02:54 by chanhapa          #+#    #+#             */
+/*   Updated: 2022/03/21 13:56:03 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *d, const void *s, size_t num)
+int	_is_in_t(char c, char const *set)
 {
-	size_t				i;
-	unsigned char		*dest;
-	const unsigned char	*src;
+	while (*set)
+		if (c == *set++)
+			return (1);
+	return (0);
+}
 
-	dest = d;
-	src = s;
-	if (!dest && !src)
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*trimmed;
+	int		i;
+
+	i = 0;
+	trimmed = (char *)malloc(sizeof(char) * (ft_strlen((char *)s1) + 1));
+	if (!trimmed)
 		return (NULL);
-	if (dest >= src)
+	while (*s1 && _is_in_t(*s1, set))
+		s1++;
+	while (*s1)
+		trimmed[i++] = *s1++;
+	trimmed[i] = 0;
+	while (i > 0 && _is_in_t(*(--s1), set))
 	{
-		i = num + 1;
-		while (--i)
-			dest[i - 1] = src[i - 1];
+		trimmed[--i] = 0;
 	}
-	else
-	{
-		i = -1;
-		while (++i < num)
-			dest[i] = src[i];
-	}
-	return (dest);
+	return (trimmed);
 }

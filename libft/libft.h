@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:45:37 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/16 18:40:04 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/17 22:35:15 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,15 @@ char			*ft_strrchr(const char *str, int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 //Part 2
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_itoa(int num);
 char			**ft_split(char *src, char sep);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s1, char const *set);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
-void			ft_putendl_fd(char *s, int fd)
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 
 #endif

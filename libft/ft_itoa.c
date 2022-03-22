@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:52:21 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 17:27:06 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/21 13:56:29 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_itoa(int num)
 	long	nbr;
 
 	str = (char *)malloc(sizeof(char) * 256);
+	if (!str)
+		return (NULL);
 	ret = str;
 	nbr = num;
 	if (num < 0)
