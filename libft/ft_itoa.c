@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:52:21 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/21 13:56:29 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/22 15:15:16 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_itoa(int num)
 {
 	char	*str;
 	char	*ret;
+	int		index;
 	long	nbr;
 
 	str = (char *)malloc(sizeof(char) * 256);
@@ -43,6 +44,7 @@ char	*ft_itoa(int num)
 		str[0] = '-';
 		str++;
 	}
-	str[_itoa_r(nbr, str)] = 0;
+	index = _itoa_r(nbr, str);
+	str[index] = 0;
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:45:37 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/17 22:35:15 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/22 15:12:51 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 //Part 1
 int				ft_atoi(const char *str);
 void			*ft_bzero(void *dest, unsigned int count);
-void			*ft_calloc(unsigned int nmemb, size_t size);
+void			*ft_calloc(size_t nmemb, size_t size);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);

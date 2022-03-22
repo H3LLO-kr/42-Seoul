@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 20:11:02 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/21 13:54:18 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/22 14:47:41 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memccpy(void *d, const void *s, int c, size_t num)
 	i = 0;
 	src = s;
 	dest = d;
-	if (!num || dest == src)
-		return (dest);
+	if (!num && !dest)
+		return (NULL);
 	while (i < num)
 	{
 		dest[i] = src[i];
