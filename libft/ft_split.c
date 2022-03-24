@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:57:49 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/22 18:44:21 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/24 14:35:00 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	_is_in(char c, char sep)
 	return (0);
 }
 
-char	**ft_split(char *src, char sep)
+char	**ft_split(const char *src, char c)
 {
 	char	**ret;
 	char	**ret_ret;
@@ -31,16 +31,16 @@ char	**ft_split(char *src, char sep)
 	ret_ret = ret;
 	if (!ret || !src)
 		return (NULL);
-	while (src[i] && _is_in(src[i], sep))
+	while (src[i] && _is_in(src[i], c))
 		i++;
 	while (src[i])
 	{
 		*ret = (char *)malloc(sizeof(char) * 256);
 		j = 0;
-		while (src[i] && !_is_in(src[i], sep))
+		while (src[i] && !_is_in(src[i], c))
 			(*ret)[j++] = src[i++];
 		(*ret)[j] = 0;
-		while (src[i] && _is_in(src[i], sep))
+		while (src[i] && _is_in(src[i], c))
 			i++;
 		ret++;
 	}

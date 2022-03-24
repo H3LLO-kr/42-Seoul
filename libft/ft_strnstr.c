@@ -6,30 +6,34 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 23:34:35 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 15:24:11 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/24 14:39:31 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(char *str, char *to_find, unsigned int size)
+#include "libft.h"
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
 	i = 0;
-	if (to_find[0] == '\0')
+	str = (char *)haystack;
+	if (needle[0] == '\0')
 		return (str);
-	while (str[i] && i < size)
+	while (str[i] && i < len)
 	{
-		if (str[i] == to_find[0])
+		if (str[i] == needle[0])
 		{
 			j = 0;
-			while (to_find[j] && i + j < size)
+			while (needle[j] && i + j < len)
 			{
-				if (str[i + j] != to_find[j])
+				if (str[i + j] != needle[j])
 					break ;
 				j++;
 			}
-			if (to_find[j] == '\0')
+			if (needle[j] == '\0')
 				return (str + i);
 		}
 		i++;

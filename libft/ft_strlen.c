@@ -6,13 +6,15 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:10:09 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 18:36:46 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/24 14:19:13 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	ret;
+	size_t	ret;
 
 	ret = 0;
 	while (str[ret])

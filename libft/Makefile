@@ -6,16 +6,17 @@
 #    By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 22:07:48 by chanhapa          #+#    #+#              #
-#    Updated: 2022/03/22 22:07:51 by chanhapa         ###   ########.fr        #
+#    Updated: 2022/03/24 14:54:53 by chanhapa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -c
-SRCS	= ft_memset.c \
+AR		= ar -rcu
+RM		= rm -f
+SRCS_M	= ft_memset.c \
 		  ft_bzero.c \
 		  ft_memcpy.c \
-		  ft_memccpy.c \
 		  ft_memmove.c \
 		  ft_memchr.c \
 		  ft_memcmp.c \
@@ -45,7 +46,8 @@ SRCS	= ft_memset.c \
 		  ft_strmapi.c \
 		  ft_putnbr_fd.c \
 		  ft_putendl_fd.c \
-		  ft_putstr_fd.c
+		  ft_putstr_fd.c \
+		  ft_striteri.c
 SRCS_B	= ft_lstnew.c \
 		  ft_lstadd_front.c \
 		  ft_lstsize.c \
@@ -55,26 +57,32 @@ SRCS_B	= ft_lstnew.c \
 		  ft_lstclear.c \
 		  ft_lstiter.c \
 		  ft_lstmap.c
-OBJS	= $(SRCS:.c=.o)
+OBJS_M	= $(SRCS_M:.c=.o)
 OBJS_B	= $(SRCS_B:.c=.o)
 NAME	= libft.a
+IF_BONUS= 1
+
+ifeq ($(IF_BONUS), 1)
+	OBJS	= $(OBJS_M) $(OBJS_B)
+else
+	OBJS	= $(OBJS_M)
+endif
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	ar -cr $@ $^
+	$(AR) $(NAME) $^
 
 %.o : %.c
 	$(CC) $(CFLAGS) $< -o $@
 
-bonus : $(OBJS_B)
-	ar -cr $(NAME) $^
+bonus : $(NAME)
 
 clean :
-	rm -f $(OBJS) $(OBJS_B)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean : clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all
 
