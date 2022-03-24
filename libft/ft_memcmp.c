@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:03:56 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 17:22:39 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/24 21:41:01 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t count)
 	while (i < count)
 	{
 		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+			return ((int)s1[i] - (int)s2[i]);
 		i++;
 	}
 	if (i == count)
