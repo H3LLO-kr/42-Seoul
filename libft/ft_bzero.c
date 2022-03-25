@@ -6,18 +6,20 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:05:06 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/15 15:15:52 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/25 21:12:09 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_bzero(void *dest, unsigned int count)
+#include "libft.h"
+
+void	*ft_bzero(void *b, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*ptr;
 
-	ptr = dest;
+	ptr = b;
 	i = 0;
-	while (i < count)
+	while (i < n)
 		ptr[i++] = 0;
 	return (ptr);
 }

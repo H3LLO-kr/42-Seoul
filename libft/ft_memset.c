@@ -6,18 +6,20 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:01:02 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/14 22:03:56 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/25 21:00:44 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *dest, int value, unsigned int count)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*ptr;
 
-	ptr = dest;
+	ptr = b;
 	i = 0;
-	while (i < count)
-		ptr[i++] = (unsigned char)value;
+	while (i < len)
+		ptr[i++] = (unsigned char)c;
 	return (ptr);
 }
