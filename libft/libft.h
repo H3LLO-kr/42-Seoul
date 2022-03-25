@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:45:37 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/25 21:14:39 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/26 00:16:17 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(char *src);
+char	*ft_strdup(const char *s1);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
