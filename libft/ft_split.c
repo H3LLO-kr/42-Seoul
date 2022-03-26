@@ -6,18 +6,11 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:57:49 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/03/24 21:41:27 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/03/26 17:41:42 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	_is_in(char c, char sep)
-{
-	if (c == sep)
-		return (1);
-	return (0);
-}
 
 size_t	_ret_num1(const char *src, char c)
 {
@@ -55,29 +48,53 @@ size_t	_ret_num2(const char *src, char c)
 	return (ret);
 }
 
+void	*_free_all(char **ret)
+{
+	int	i;
+
+	i = 0;
+	if (ret)
+	{
+		while (ret[i])
+			free(ret[i++]);
+		free(ret);
+	}
+	return (NULL);
+}
+
+void	_str_cpy(const char *src, int *i, char c, char *ret)
+{
+	int	j;
+
+	j = 0;
+	while (src[*i] && c != src[*i])
+		ret[j++] = src[(*i)++];
+	ret[j] = 0;
+	while (src[*i] && c == src[*i])
+		(*i)++;
+}
+
 char	**ft_split(const char *src, char c)
 {
 	char	**ret;
 	char	**ret_ret;
 	int		i;
-	int		j;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	ret = (char **)malloc(sizeof(char *) * (_ret_num1(src, c) + 1));
-	if (!ret || !src)
+	if (!ret)
 		return (NULL);
 	ret_ret = ret;
-	while (src[i] && _is_in(src[i], c))
+	while (src[i] && c == src[i])
 		i++;
 	while (src[i])
 	{
 		*ret = (char *)malloc(sizeof(char) * (_ret_num2(&src[i], c) + 1));
-		j = 0;
-		while (src[i] && !_is_in(src[i], c))
-			(*ret)[j++] = src[i++];
-		(*ret)[j] = 0;
-		while (src[i] && _is_in(src[i], c))
-			i++;
+		if (!*ret)
+			return (_free_all(ret_ret));
+		_str_cpy(src, &i, c, *ret);
 		ret++;
 	}
 	*ret = 0;
