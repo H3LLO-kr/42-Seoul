@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 19:20:53 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/04/19 15:37:25 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/05/12 20:42:21 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <limits.h>
+
+typedef struct s_backup{
+	char	*ptr;
+	
+}t_backup;
 
 char	*ft_strjoin(char const *s1, char const *s2);
 
